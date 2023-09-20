@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <div class="notice">
+    <h1>Welcome to the Notice Board</h1>
+    <form (submit)="addNotice()">
+      <label for="name" class="label"> Enter Name  </label> 
+      <input type="text" id="name" class="input" [(ngModel)]="newNotice.name" name="name" required><br>
+      <label for="phone" class="label"> Enter Phone Number  </label>
+      <input type="number" id="phone" class="input" [(ngModel)]="newNotice.phone" name="phone" required><br>
+      <button class="button" type="submit">Add</button>
+    </form>
+  </div>
+  
+  <h1>Notices:</h1>
+  <ul>
+    <li *ngFor="let notice of notices" class="list">
+      <span class="item">{{ notice.name }} <br> {{ notice.phone }}</span>
+    </li>
+  </ul>
+</body>
+  </html>
+  
